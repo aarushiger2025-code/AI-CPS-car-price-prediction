@@ -1,0 +1,10 @@
+FROM busybox
+
+# Create activation directory
+RUN mkdir -p /tmp/activationBase
+
+# Copy activation data
+COPY tmp/activationBase/activation_data.csv /tmp/activationBase/
+
+# Copy documentation
+COPY Readme.md /tmp/activationBase/Readme.md
