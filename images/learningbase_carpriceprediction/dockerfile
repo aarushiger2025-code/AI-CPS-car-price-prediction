@@ -2,11 +2,11 @@ FROM busybox
 
 # Create required directories
 RUN mkdir -p /tmp/learningBase/train \
-             /tmp/learningBase/test
+             /tmp/learningBase/validation
 
 # Copy datasets
 COPY tmp/learningBase/train/training_data.csv /tmp/learningBase/train/
-COPY tmp/learningBase/test/test_data.csv /tmp/learningBase/test/
+COPY tmp/learningBase/validation/test_data.csv /tmp/learningBase/validation/
 
 # Copy documentation
 COPY Readme.md /tmp/learningBase/Readme.md
