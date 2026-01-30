@@ -74,4 +74,4 @@ df['power_ps'] = power_scaler.fit_transform(df[['power_ps']])
 # Save Clean Dataset
 df.to_csv("joint_data_collection.csv", index=False)
 
-print("✅ Data cleaning complete. Clean dataset saved as joint_data_collection.csv")
+print("Data cleaning complete. Clean dataset saved as joint_data_collection.csv")
