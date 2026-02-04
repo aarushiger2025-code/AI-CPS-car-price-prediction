@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  knowledgebase:
+    image: ayushisachan/knowledgebase_car_price_prediction
+    platform: linux/amd64
+    volumes:
+      - ai_system:/tmp
+
+  activationbase:
+    image: ayushisachan/activationbase_car_price_prediction
+    platform: linux/amd64
+    volumes:
+      - ai_system:/tmp
+
+  codebase:
+    image: ayushisachan/codebase_car_price_prediction
+    platform: linux/amd64
+    volumes:
+      - ai_system:/tmp
+
+  runner:
+    image: python:3.10-slim
+    platform: linux/amd64
+    volumes:
+      - ai_system:/tmp
+    command: ["python", "/tmp/codebase/apply_ols.py"]
+
+volumes:
+  ai_system:

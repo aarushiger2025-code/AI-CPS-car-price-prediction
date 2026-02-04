@@ -1,0 +1,6 @@
+FROM busybox
+
+COPY tmp /tmp
+
+CMD ["sh"]
+
