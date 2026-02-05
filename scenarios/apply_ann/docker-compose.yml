@@ -1,35 +1,30 @@
-version: "3.9"
-
 services:
-  knowledgebase:
-    image: ayushisachan/knowledgebase_car_price_prediction
-    platform: linux/amd64
+
+  activationbase:
+    build: ../../images/activationBase
     volumes:
       - ai_system:/tmp
 
-  activationbase:
-    image: ayushisachan/activationbase_car_price_prediction
-    platform: linux/amd64
+  knowledgebase:
+    build: ../../images/knowledgeBase
     volumes:
       - ai_system:/tmp
 
   codebase:
-    image: ayushisachan/codebase_car_price_prediction
-    platform: linux/amd64
+    build: ../../images/codeBase
     volumes:
       - ai_system:/tmp
 
   runner:
-    build: ./runner
-    platform: linux/amd64
+    image: python:3.10-slim
     depends_on:
-      - knowledgebase
       - activationbase
+      - knowledgebase
       - codebase
     volumes:
       - ai_system:/tmp
-    command: python /tmp/codebase/apply_ann.py
+    working_dir: /tmp/codebase
+    command: sh -c "pip install pandas numpy scikit-learn tensorflow && python run_prediction.py"
 
 volumes:
   ai_system:
-    external: false
