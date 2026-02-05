@@ -1,5 +1,5 @@
 
-#Second-Hand Car Price Prediction System
+# Second-Hand Car Price Prediction System
 
 This repository contains an AI-based application system for predicting second-hand car prices.
 
@@ -10,13 +10,13 @@ University of Potsdam
 This repository is a fork of:
 https://github.com/MarcusGrum/AI-CPS
 
-###Overview
+### Overview
 
 This project focuses on predicting car prices using Artificial Neural Network (ANN) model and an Ordinary Least Squares (OLS) regression model; trained on cleaned and preprocessed car listing data scraped from the autoscout24.de.
 
 Model performance is evaluated using standard regression metrics and visual analysis of predictions.
 
-###Dataset
+### Dataset
 
 The dataset was scraped from online car listing platform "autoscout24.de" and contains structured information about used cars.
 
@@ -30,7 +30,7 @@ Features included:
  -engine power (PS)
  -price (target variable)
 
-###Quick-Start
+### Quick-Start
 
 Go to the scenario folder first:
 `cd scenario/apply_ols`
@@ -41,11 +41,11 @@ or for ANN:
 Run containers:
 `docker compose up --build`
 
-###Author
+### Author
 
  -Aarushi Gupta
  -Ayushi Sachan
 
-##License
+## License
 
 AGPL-3.0
