@@ -23,7 +23,7 @@ services:
       - codebase
     volumes:
       - ai_system:/tmp
-    working_dir: /tmp/codebase
+    working_dir: /images/codeBase
     command: sh -c "pip install pandas numpy scikit-learn && python run_ols.py"
 
 volumes:

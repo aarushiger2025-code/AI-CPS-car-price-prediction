@@ -23,8 +23,8 @@ services:
       - codebase
     volumes:
       - ai_system:/tmp
-    working_dir: /tmp/codebase
-    command: sh -c "pip install pandas numpy scikit-learn tensorflow && python run_prediction.py"
+    working_dir: /images/codeBase
+    command: sh -c "pip install pandas numpy scikit-learn tensorflow && python run_ann.py"
 
 volumes:
   ai_system:
