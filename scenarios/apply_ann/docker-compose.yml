@@ -20,7 +20,7 @@ services:
       - ai_system:/tmp
 
   runner:
-    image: ayushisachan/runner
+    build: ./runner
     platform: linux/amd64
     depends_on:
       - knowledgebase
@@ -28,7 +28,7 @@ services:
       - codebase
     volumes:
       - ai_system:/tmp
-    command: python /tmp/codeBase/apply_ann.py
+    command: python /tmp/codebase/apply_ann.py
 
 volumes:
   ai_system:

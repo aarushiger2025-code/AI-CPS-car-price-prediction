@@ -28,7 +28,7 @@ services:
       - codebase
     volumes:
       - ai_system:/tmp
-    command: python /tmp/codeBase/apply_ols.py
+    command: python /tmp/codebase/apply_ols.py
 
 volumes:
   ai_system:
