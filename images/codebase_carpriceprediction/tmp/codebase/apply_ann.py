@@ -3,7 +3,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 
 # Paths inside Docker volume
-MODEL_PATH = "/tmp/knowledgeBase/current_ann_solution.keras"
+MODEL_PATH = "/tmp/knowledgebase/current_ann_solution.keras"
 DATA_PATH = "/tmp/activationBase/activation_data.csv"
 
 # Load trained ANN model

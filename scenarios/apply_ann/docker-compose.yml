@@ -1,4 +1,4 @@
-ersion: "3.8"
+version: "3.9"
 
 services:
   knowledgebase:
@@ -18,7 +18,18 @@ services:
     platform: linux/amd64
     volumes:
       - ai_system:/tmp
-    command: ["python", "/tmp/codeBase/apply_ann.py"]
+
+  runner:
+    image: ayushisachan/runner
+    platform: linux/amd64
+    depends_on:
+      - knowledgebase
+      - activationbase
+      - codebase
+    volumes:
+      - ai_system:/tmp
+    command: python /tmp/codeBase/apply_ann.py
 
 volumes:
   ai_system:
+    external: false

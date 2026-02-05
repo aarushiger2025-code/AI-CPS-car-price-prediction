@@ -3,7 +3,7 @@ import pandas as pd
 import statsmodels.api as sm
 
 # Paths inside Docker shared volume
-MODEL_PATH = "/tmp/knowledgeBase/current_ols_solution.pkl"
+MODEL_PATH = "/tmp/knowledgebase/current_ols_solution.pkl"
 DATA_PATH = "/tmp/activationBase/activation_data.csv"
 
 # Load trained OLS model

@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+
+  knowledgebase:
+    image: busybox
+    volumes:
+      - ./knowledgeBase:/tmp/knowledgeBase
+    command: ["sh", "-c", "echo KnowledgeBase ready"]
+
+  activationbase:
+    image: busybox
+    volumes:
+      - ./activationBase:/tmp/activationBase
+    command: ["sh", "-c", "echo ActivationBase ready"]
+
+  codebase:
+    image: busybox
+    volumes:
+      - ./codeBase:/tmp/codebase
+    command: ["sh", "-c", "echo CodeBase ready"]
+
+  runner:
+    build: ./runner
+    volumes:
+      - ./knowledgeBase:/tmp/knowledgeBase
+      - ./activationBase:/tmp/activationBase
+      - ./codeBase:/tmp/codebase
+    command: ["python", "/tmp/codebase/apply_ols.py"]

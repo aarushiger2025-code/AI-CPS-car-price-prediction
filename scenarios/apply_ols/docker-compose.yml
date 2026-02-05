@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.9"
 
 services:
   knowledgebase:
@@ -20,11 +20,17 @@ services:
       - ai_system:/tmp
 
   runner:
-    image: python:3.10-slim
+    image: ayushisachan/runner
     platform: linux/amd64
+    depends_on:
+      - knowledgebase
+      - activationbase
+      - codebase
     volumes:
       - ai_system:/tmp
-    command: ["python", "/tmp/codebase/apply_ols.py"]
+    command: python /tmp/codeBase/apply_ols.py
 
 volumes:
   ai_system:
+    external: false
+
